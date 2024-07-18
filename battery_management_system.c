@@ -13,12 +13,21 @@ bool isTemperatureInRange(float temperature) {
     return true;
 }
 
-void checkTemperatureWarning(float temperature) {
+void checkHighTemperatureWarning(float temperature) {
     if (temperature > MAX_TEMPERATURE - TEMPERATURE_WARNING_TOLERANCE && temperature <= MAX_TEMPERATURE) {
         logMessage("Warning: Approaching high temperature", temperature, true);
-    } else if (temperature >= MIN_TEMPERATURE && temperature < MIN_TEMPERATURE + TEMPERATURE_WARNING_TOLERANCE) {
+    }
+}
+
+void checkLowTemperatureWarning(float temperature) {
+    if (temperature >= MIN_TEMPERATURE && temperature < MIN_TEMPERATURE + TEMPERATURE_WARNING_TOLERANCE) {
         logMessage("Warning: Approaching low temperature", temperature, false);
     }
+}
+
+void checkTemperatureWarning(float temperature) {
+    checkHighTemperatureWarning(temperature);
+    checkLowTemperatureWarning(temperature);
 }
 
 bool isSocInRange(float soc) {
@@ -29,12 +38,21 @@ bool isSocInRange(float soc) {
     return true;
 }
 
-void checkSocWarning(float soc) {
+void checkHighSocWarning(float soc) {
     if (soc > MAX_SOC - SOC_WARNING_TOLERANCE && soc <= MAX_SOC) {
         logMessage("Warning: Approaching charge-peak", soc, true);
-    } else if (soc >= MIN_SOC && soc < MIN_SOC + SOC_WARNING_TOLERANCE) {
+    }
+}
+
+void checkLowSocWarning(float soc) {
+    if (soc >= MIN_SOC && soc < MIN_SOC + SOC_WARNING_TOLERANCE) {
         logMessage("Warning: Approaching discharge", soc, false);
     }
+}
+
+void checkSocWarning(float soc) {
+    checkHighSocWarning(soc);
+    checkLowSocWarning(soc);
 }
 
 bool isChargeRateInRange(float chargeRate) {
