@@ -31,12 +31,12 @@ void testIsChargeRateInRange() {
 }
 
 void testBatteryIsOk() {
-    assert(batteryIsOk_1(25, 70, 0.7) == true);
-    assert(batteryIsOk_1(0, 20, 0) == true);
-    assert(batteryIsOk_1(-1, 70, 0.7) == false);
-    assert(batteryIsOk_1(25, 19, 0.7) == false);
-    assert(batteryIsOk_1(25, 70, 0.9) == false);
-    assert(batteryIsOk_1(50, 85, 0) == false);
+    assert(batteryIsOk(25, 70, 0.7) == true);
+    assert(batteryIsOk(0, 20, 0) == true);
+    assert(batteryIsOk(-1, 70, 0.7) == false);
+    assert(batteryIsOk(25, 19, 0.7) == false);
+    assert(batteryIsOk(25, 70, 0.9) == false);
+    assert(batteryIsOk(50, 85, 0) == false);
 }
 
 void testWarnings() {
