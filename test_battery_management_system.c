@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <stdio.h>
 #include "battery_management_system.h"
 
 void testIsTemperatureInRange() {
