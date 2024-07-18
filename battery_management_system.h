@@ -1,3 +1,6 @@
+#ifndef BATTERY_MANAGEMENT_SYSTEM_H
+#define BATTERY_MANAGEMENT_SYSTEM_H
+
 #include <stdbool.h>
 
 #define MIN_TEMPERATURE 0.0f
@@ -25,3 +28,5 @@ void logMessage(const char* message, float value, bool isHigh);
 void checkTemperatureWarning(float temperature);
 void checkSocWarning(float soc);
 void checkChargeRateWarning(float chargeRate);
+
+#endif // BATTERY_MANAGEMENT_SYSTEM_H
