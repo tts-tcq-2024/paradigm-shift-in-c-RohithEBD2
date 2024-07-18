@@ -20,7 +20,7 @@ typedef struct {
 bool isTemperatureInRange(float temperature);
 bool isSocInRange(float soc);
 bool isChargeRateInRange(float chargeRate);
-bool batteryIsOk(float temperature, float soc, float chargeRate);
+bool batteryIsOk_1(float temperature, float soc, float chargeRate);
 void logMessage(const char* message, float value, bool isHigh);
 void checkTemperatureWarning(float temperature);
 void checkSocWarning(float soc);
