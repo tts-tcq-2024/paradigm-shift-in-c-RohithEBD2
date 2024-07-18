@@ -30,7 +30,7 @@ void testIsChargeRateInRange() {
     assert(isChargeRateInRange(0.9) == false);
 }
 
-void testBatteryIsOk() {
+void testBatteryIsOk_1() {
     assert(batteryIsOk(25, 70, 0.7) == true);
     assert(batteryIsOk(0, 20, 0) == true);
     assert(batteryIsOk(-1, 70, 0.7) == false);
@@ -51,7 +51,7 @@ int main() {
     testIsTemperatureInRange();
     testIsSocInRange();
     testIsChargeRateInRange();
-    testBatteryIsOk();
+    testBatteryIsOk_1();
     testWarnings();
     printf("All tests passed!\n");
     return 0;
