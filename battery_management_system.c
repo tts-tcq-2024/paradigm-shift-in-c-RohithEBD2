@@ -69,7 +69,7 @@ void checkChargeRateWarning(float chargeRate) {
     }
 }
 
-bool batteryIsOk_1(float temperature, float soc, float chargeRate) {
+bool batteryIsOk(float temperature, float soc, float chargeRate) {
     bool isOk = true;
     isOk &= isTemperatureInRange(temperature);
     isOk &= isSocInRange(soc);
