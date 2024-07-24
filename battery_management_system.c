@@ -11,6 +11,12 @@ bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningCo
     isOk &= isSocInRange(soc);
     isOk &= isChargeRateInRange(chargeRate);
 
+    checkWarnings(temperature, soc, chargeRate, config);
+
+    return isOk;
+}
+
+void checkWarnings(float temperature, float soc, float chargeRate, const WarningConfig* config) {
     if (config->enableTemperatureWarning) {
         checkTemperatureWarning(temperature, config);
     }
@@ -20,6 +26,4 @@ bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningCo
     if (config->enableChargeRateWarning) {
         checkChargeRateWarning(chargeRate, config);
     }
-
-    return isOk;
 }
