@@ -12,12 +12,6 @@
 #define CHARGE_RATE_WARNING_TOLERANCE 0.04f // 5% of 0.8
 
 typedef struct {
-    float temperature;
-    float soc;
-    float chargeRate;
-} BatteryManagementSystem;
-
-typedef struct {
     bool enableTemperatureWarning;
     bool enableSocWarning;
     bool enableChargeRateWarning;
