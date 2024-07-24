@@ -18,13 +18,13 @@ typedef struct {
 } WarningConfig;
 
 bool isTemperatureInRange(float temperature);
-void checkTemperatureWarning(float temperature);
+void checkTemperatureWarning(float temperature, const WarningConfig* config);
 
 bool isSocInRange(float soc);
-void checkSocWarning(float soc);
+void checkSocWarning(float soc, const WarningConfig* config);
 
 bool isChargeRateInRange(float chargeRate);
-void checkChargeRateWarning(float chargeRate);
+void checkChargeRateWarning(float chargeRate, const WarningConfig* config);
 
 void logMessage(const char* message, float value, bool isHigh);
 bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningConfig* config);
