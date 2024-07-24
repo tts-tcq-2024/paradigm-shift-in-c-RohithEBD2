@@ -1,4 +1,5 @@
 #include "battery_management_system.h"
+#include <stdio.h>
 
 int main() {
     WarningConfig config = {true, true, true}; // Enable warnings for all parameters
