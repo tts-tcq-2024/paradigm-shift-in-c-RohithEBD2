@@ -17,12 +17,24 @@ typedef struct {
     float chargeRate;
 } BatteryManagementSystem;
 
+typedef struct {
+    bool enableTemperatureWarning;
+    bool enableSocWarning;
+    bool enableChargeRateWarning;
+} WarningConfig;
+
 bool isTemperatureInRange(float temperature);
-bool isSocInRange(float soc);
-bool isChargeRateInRange(float chargeRate);
-bool batteryIsOk(float temperature, float soc, float chargeRate);
-void logMessage(const char* message, float value, bool isHigh);
 void checkTemperatureWarning(float temperature);
+
+bool isSocInRange(float soc);
 void checkSocWarning(float soc);
+
+bool isChargeRateInRange(float chargeRate);
 void checkChargeRateWarning(float chargeRate);
+
+void logMessage(const char* message, float value, bool isHigh);
+bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningConfig* config);
+
+
+
 
