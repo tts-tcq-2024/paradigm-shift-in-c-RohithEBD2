@@ -6,10 +6,9 @@ void logMessage(const char* message, float value, bool isHigh) {
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningConfig* config) {
-    bool isOk = true;
-    isOk &= isTemperatureInRange(temperature);
-    isOk &= isSocInRange(soc);
-    isOk &= isChargeRateInRange(chargeRate);
+    bool isOk = isTemperatureInRange(temperature) &&
+                isSocInRange(soc) &&
+                isChargeRateInRange(chargeRate);
 
     checkWarnings(temperature, soc, chargeRate, config);
 
@@ -17,12 +16,24 @@ bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningCo
 }
 
 void checkWarnings(float temperature, float soc, float chargeRate, const WarningConfig* config) {
+    checkTemperatureWarningIfEnabled(temperature, config);
+    checkSocWarningIfEnabled(soc, config);
+    checkChargeRateWarningIfEnabled(chargeRate, config);
+}
+
+void checkTemperatureWarningIfEnabled(float temperature, const WarningConfig* config) {
     if (config->enableTemperatureWarning) {
         checkTemperatureWarning(temperature, config);
     }
+}
+
+void checkSocWarningIfEnabled(float soc, const WarningConfig* config) {
     if (config->enableSocWarning) {
         checkSocWarning(soc, config);
     }
+}
+
+void checkChargeRateWarningIfEnabled(float chargeRate, const WarningConfig* config) {
     if (config->enableChargeRateWarning) {
         checkChargeRateWarning(chargeRate, config);
     }
