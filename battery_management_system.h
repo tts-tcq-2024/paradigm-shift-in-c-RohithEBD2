@@ -28,7 +28,11 @@ void checkChargeRateWarning(float chargeRate, const WarningConfig* config);
 
 void logMessage(const char* message, float value, bool isHigh);
 bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningConfig* config);
+
 void checkWarnings(float temperature, float soc, float chargeRate, const WarningConfig* config);
+void checkTemperatureWarningIfEnabled(float temperature, const WarningConfig* config);
+void checkSocWarningIfEnabled(float soc, const WarningConfig* config);
+void checkChargeRateWarningIfEnabled(float chargeRate, const WarningConfig* config);
 
 
 
