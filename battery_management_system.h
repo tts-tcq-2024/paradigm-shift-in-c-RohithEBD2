@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include "battery_management_system.h"
 
 typedef struct {
     bool enableTemperatureWarning;
