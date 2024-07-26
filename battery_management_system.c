@@ -6,11 +6,12 @@ void logMessage(const char* message, float value, bool isHigh) {
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningConfig* config) {
+    
+    checkWarnings(temperature, soc, chargeRate, config);
+    
     bool isOk = isTemperatureInRange(temperature) &&
                 isSocInRange(soc) &&
                 isChargeRateInRange(chargeRate);
-
-    checkWarnings(temperature, soc, chargeRate, config);
 
     return isOk;
 }
