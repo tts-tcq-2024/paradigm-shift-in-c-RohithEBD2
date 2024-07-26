@@ -1,9 +1,5 @@
 #include <stdbool.h>
 
-#define MIN_TEMPERATURE 0.0f
-#define MAX_TEMPERATURE 45.0f
-#define TEMPERATURE_WARNING_TOLERANCE 2.25f // 5% of 45
-
 #define MIN_SOC 20.0f
 #define MAX_SOC 80.0f
 #define SOC_WARNING_TOLERANCE 4.0f // 5% of 80
@@ -17,8 +13,6 @@ typedef struct {
     bool enableChargeRateWarning;
 } WarningConfig;
 
-bool isTemperatureInRange(float temperature);
-void checkTemperatureWarning(float temperature, const WarningConfig* config);
 
 bool isSocInRange(float soc);
 void checkSocWarning(float soc, const WarningConfig* config);
