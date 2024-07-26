@@ -49,12 +49,11 @@ void testWarnings() {
     checkChargeRateWarning(0.78, &config);  // High charge rate warning
 }
 
-int main() {
+int main() 
+    testWarnings();
+    testBatteryIsOk();
     testIsTemperatureInRange();
     testIsSocInRange();
     testIsChargeRateInRange();
-    testBatteryIsOk();
-    testWarnings();
-    printf("All tests passed!\n");
     return 0;
 }
