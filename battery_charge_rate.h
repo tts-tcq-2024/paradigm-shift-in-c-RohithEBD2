@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #define MAX_CHARGE_RATE 0.8f
 #define CHARGE_RATE_WARNING_TOLERANCE 0.04f // 5% of 0.8
 
