@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include "battery_management_system.h"
 
 #define MIN_SOC 20.0f
 #define MAX_SOC 80.0f
