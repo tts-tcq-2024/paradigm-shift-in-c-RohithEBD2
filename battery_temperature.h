@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include "battery_management_system.h"
 
 #define MIN_TEMPERATURE 0.0f
 #define MAX_TEMPERATURE 45.0f
