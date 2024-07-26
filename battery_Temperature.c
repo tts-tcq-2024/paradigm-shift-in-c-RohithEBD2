@@ -1,4 +1,5 @@
 #include "battery_temperature.h"
+#include "battery_management_system.h"
 
 bool isTemperatureInRange(float temperature) {
     bool isLow = temperature < MIN_TEMPERATURE;
