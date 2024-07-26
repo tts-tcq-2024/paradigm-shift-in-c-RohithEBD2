@@ -50,6 +50,7 @@ void testWarnings() {
 }
 
 int main() 
+{
     testWarnings();
     testBatteryIsOk();
     testIsTemperatureInRange();
