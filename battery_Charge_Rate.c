@@ -1,5 +1,5 @@
 #include "battery_charge_rate.h"
-#include "battery_management_system.h"
+#include "battery_log_message.h"
 
 bool isChargeRateInRange(float chargeRate) {
     bool isHigh = chargeRate > MAX_CHARGE_RATE;
