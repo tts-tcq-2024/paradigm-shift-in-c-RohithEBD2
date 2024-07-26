@@ -1,4 +1,7 @@
 #include "battery_management_system.h"
+#include "battery_charge_rate.h"
+#include "battery_temperature.h"
+#include "battery_state_of_charge.h"
 #include <stdio.h>
 
 void logMessage(const char* message, float value, bool isHigh) {
