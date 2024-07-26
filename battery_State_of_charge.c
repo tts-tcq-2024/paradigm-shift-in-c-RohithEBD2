@@ -1,5 +1,5 @@
 #include "battery_state_of_charge.h"
-#include "battery_management_system.h"
+#include "battery_log_message.h"
 
 bool isSocInRange(float soc) {
     bool isLow = soc < MIN_SOC;
