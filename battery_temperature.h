@@ -1,3 +1,6 @@
+#ifndef BATTERY_TEMPERATURE_H
+#define BATTERY_TEMPERATURE_H
+
 #include <stdbool.h>
 #include "battery_management_system.h"
 
@@ -8,3 +11,5 @@
 bool isTemperatureInRange(float temperature);
 void checkTemperatureWarning(float temperature, const WarningConfig* config);
 void checkTemperatureWarningIfEnabled(float temperature, const WarningConfig* config);
+
+#endif // BATTERY_TEMPERATURE_H
