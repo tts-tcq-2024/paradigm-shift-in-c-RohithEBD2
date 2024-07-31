@@ -1,3 +1,6 @@
+#ifndef BATTERY_STATE_OF_CHARGE_H
+#define BATTERY_STATE_OF_CHARGE_H
+
 #include <stdbool.h>
 #include "battery_management_system.h"
 
@@ -8,3 +11,5 @@
 bool isSocInRange(float soc);
 void checkSocWarning(float soc, const WarningConfig* config);
 void checkSocWarningIfEnabled(float soc, const WarningConfig* config);
+
+#endif // BATTERY_STATE_OF_CHARGE_H
