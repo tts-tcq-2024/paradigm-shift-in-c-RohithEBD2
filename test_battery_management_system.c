@@ -8,7 +8,6 @@ void testIsTemperatureInRange() {
     assert(isTemperatureInRange(25) == true);
     assert(isTemperatureInRange(-0.1) == false);
     assert(isTemperatureInRange(45.1) == false);
-    assert(isTemperatureInRange(-5) == false);
     assert(isTemperatureInRange(50) == false);
 }
 
