@@ -36,4 +36,25 @@ void testBatteryIsOk() {
     assert(batteryIsOk(0, 20, 0, &config) == true);
     assert(batteryIsOk(-1, 70, 0.7, &config) == false);
     assert(batteryIsOk(25, 19, 0.7, &config) == false);
-    assert(battery
+    assert(batteryIsOk(25, 70, 0.9, &config) == false);
+    assert(batteryIsOk(50, 85, 0, &config) == false);
+}
+
+void testWarnings() {
+    WarningConfig config = {true, true, true}; // Enable warnings for all parameters
+    checkTemperatureWarning(43.5, &config); // High temperature warning
+    checkTemperatureWarning(2.0, &config);  // Low temperature warning
+    checkSocWarning(76.0, &config);         // High SOC warning
+    checkSocWarning(22.0, &config);         // Low SOC warning
+    checkChargeRateWarning(0.78, &config);  // High charge rate warning
+}
+
+int main() 
+{
+    testWarnings();
+    testBatteryIsOk();
+    testIsTemperatureInRange();
+    testIsSocInRange();
+    testIsChargeRateInRange();
+    return 0;
+}
