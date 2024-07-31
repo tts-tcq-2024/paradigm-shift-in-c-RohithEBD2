@@ -1,3 +1,6 @@
+#ifndef BATTERY_CHARGE_RATE_H
+#define BATTERY_CHARGE_RATE_H
+
 #include <stdbool.h>
 #include "battery_management_system.h"
 
@@ -7,3 +10,5 @@
 bool isChargeRateInRange(float chargeRate);
 void checkChargeRateWarning(float chargeRate, const WarningConfig* config);
 void checkChargeRateWarningIfEnabled(float chargeRate, const WarningConfig* config);
+
+#endif // BATTERY_CHARGE_RATE_H
