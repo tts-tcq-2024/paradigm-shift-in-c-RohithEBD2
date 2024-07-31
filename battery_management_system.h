@@ -1,3 +1,6 @@
+#ifndef BATTERY_MANAGEMENT_SYSTEM_H
+#define BATTERY_MANAGEMENT_SYSTEM_H
+
 #include <stdbool.h>
 
 typedef struct {
@@ -10,7 +13,4 @@ bool batteryIsOk(float temperature, float soc, float chargeRate, const WarningCo
 
 void checkWarnings(float temperature, float soc, float chargeRate, const WarningConfig* config);
 
-
-
-
-
+#endif // BATTERY_MANAGEMENT_SYSTEM_H
